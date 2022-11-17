@@ -7,6 +7,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import pl.amon.moretinygates.MoreTinyGates;
+import pl.amon.moretinygates.gates.*;
 
 @Mod.EventBusSubscriber(modid = MoreTinyGates.MODID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ClientSetup {
@@ -20,5 +21,8 @@ public class ClientSetup {
     if (!event.getAtlas().location().equals(InventoryMenu.BLOCK_ATLAS)) {
       return;
     }
+
+    event.addSprite(NANDGate.TEXTURE_NAND_GATE_ON);
+    event.addSprite(NANDGate.TEXTURE_NAND_GATE_OFF);
   }
 }
