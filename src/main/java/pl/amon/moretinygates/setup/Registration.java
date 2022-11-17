@@ -14,7 +14,7 @@ public class Registration {
   public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MoreTinyGates.MODID);
 
   public static final RegistryObject<Item> TINY_NAND_GATE_ITEM = ITEMS.register("tiny_nand_gate", PanelCellGateItem::new);
-  //public static final RegistryObject<Item> TINY_NOR_GATE_ITEM = ITEMS.register("tiny_nor_gate", PanelCellGateItem::new);
+  public static final RegistryObject<Item> TINY_NOR_GATE_ITEM = ITEMS.register("tiny_nor_gate", PanelCellGateItem::new);
   //public static final RegistryObject<Item> TINY_XOR_GATE_ITEM = ITEMS.register("tiny_xnor_gate", PanelCellGateItem::new);
   
   public static void register() {
@@ -23,7 +23,7 @@ public class Registration {
 
   public static void registerPanelCells(){
     TinyRedstone.registerPanelCell(NANDGate.class, TINY_NAND_GATE_ITEM.get());
-    //TinyRedstone.registerPanelCell(ORGate.class, TINY_NOR_GATE_ITEM.get());
+    TinyRedstone.registerPanelCell(NORGate.class, TINY_NOR_GATE_ITEM.get());
     //TinyRedstone.registerPanelCell(XORGate.class, TINY_XOR_GATE_ITEM.get());
   }
 }

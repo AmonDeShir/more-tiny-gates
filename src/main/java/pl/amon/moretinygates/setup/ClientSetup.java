@@ -24,5 +24,8 @@ public class ClientSetup {
 
     event.addSprite(NANDGate.TEXTURE_NAND_GATE_ON);
     event.addSprite(NANDGate.TEXTURE_NAND_GATE_OFF);
+
+    event.addSprite(NORGate.TEXTURE_NOR_GATE_ON);
+    event.addSprite(NORGate.TEXTURE_NOR_GATE_OFF);
   }
 }
