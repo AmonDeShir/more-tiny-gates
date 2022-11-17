@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+      "#G"
+  ],
+  "key": {
+      "#": {
+          "item": "tinygates:tiny_or_gate"
+      },
+      "G": {
+          "item": "tinygates:tiny_not_gate"
+      }
+  },
+  "result": {
+      "item": "moretinygates:tiny_nor_gate",
+      "count": 1
+  }
+}
+
