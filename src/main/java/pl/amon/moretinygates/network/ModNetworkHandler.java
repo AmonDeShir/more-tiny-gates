@@ -17,34 +17,35 @@ public class ModNetworkHandler {
     private static final String PROTOCOL_VERSION = "1.2";
 
     private static int nextID() {
-        return ID++;
+      return ID++;
     }
 
     public static void registerMessages() {
-        INSTANCE = NetworkRegistry.newSimpleChannel(
-                new ResourceLocation(MoreTinyGates.MODID, "tinyredstone"),
-                () -> PROTOCOL_VERSION,
-                PROTOCOL_VERSION::equals,
-                PROTOCOL_VERSION::equals);
+      INSTANCE = NetworkRegistry.newSimpleChannel(
+        new ResourceLocation(MoreTinyGates.MODID, "tinyredstone"),
+        () -> PROTOCOL_VERSION,
+        PROTOCOL_VERSION::equals,
+        PROTOCOL_VERSION::equals
+      );
 
-        INSTANCE.messageBuilder(PanelCellSync.class,nextID())
-                .encoder(PanelCellSync::toBytes)
-                .decoder(PanelCellSync::new)
-                .consumer(PanelCellSync::handle)
-                .add();
+      INSTANCE.messageBuilder(PanelCellSync.class,nextID())
+        .encoder(PanelCellSync::toBytes)
+        .decoder(PanelCellSync::new)
+        .consumer(PanelCellSync::handle)
+        .add();
     }
 
     public static void sendToClient(Object packet, PanelTile panelTile) {
-        BlockPos pos = panelTile.getBlockPos();
-        for (Player player : panelTile.getLevel().players()) {
-            if (player instanceof ServerPlayer && player.distanceToSqr(pos.getX(),pos.getY(),pos.getZ()) < 64d) {
-                INSTANCE.sendTo(packet, ((ServerPlayer) player).connection.connection, NetworkDirection.PLAY_TO_CLIENT);
-            }
+      BlockPos pos = panelTile.getBlockPos();
+      for (Player player : panelTile.getLevel().players()) {
+        if (player instanceof ServerPlayer && player.distanceToSqr(pos.getX(),pos.getY(),pos.getZ()) < 64d) {
+          INSTANCE.sendTo(packet, ((ServerPlayer) player).connection.connection, NetworkDirection.PLAY_TO_CLIENT);
         }
+      }
     }
 
     public static void sendToServer(Object packet) {
-        INSTANCE.sendToServer(packet);
+      INSTANCE.sendToServer(packet);
     }
 
 }

@@ -10,14 +10,10 @@ import pl.amon.moretinygates.setup.ClientSetup;
 import pl.amon.moretinygates.setup.ModSetup;
 import pl.amon.moretinygates.setup.Registration;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
 @Mod(MoreTinyGates.MODID)
 public class MoreTinyGates
 {
     public static final String MODID = "moretinygates";
-    private static final Logger LOGGER = LogManager.getLogger();
 
     public MoreTinyGates() {
         Registration.register();

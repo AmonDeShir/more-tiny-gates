@@ -27,5 +27,8 @@ public class ClientSetup {
 
     event.addSprite(NORGate.TEXTURE_NOR_GATE_ON);
     event.addSprite(NORGate.TEXTURE_NOR_GATE_OFF);
+
+    event.addSprite(XNORGate.TEXTURE_XNOR_GATE_ON);
+    event.addSprite(XNORGate.TEXTURE_XNOR_GATE_OFF);
   }
 }
