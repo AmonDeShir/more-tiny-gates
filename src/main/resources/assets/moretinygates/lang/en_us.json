@@ -1,0 +1,11 @@
+
+{
+  "item.moretinygates.tiny_nor_gate" : "Tiny NOR Gate",
+  "message.item.moretinygates.tiny_nor_gate": "Outputs to front when a signal isn't received from any side. (Negated OR gate)",
+  
+  "item.moretinygates.tiny_xor_gate" : "Tiny XNOR Gate",
+  "message.item.moretinygates.tiny_xor_gate": "Outputs to front when the input signals match. ",
+  
+  "item.moremoretinygates.tiny_nand_gate" : "Tiny NAND Gate",
+  "message.item.moretinygates.tiny_nand_gate": "Outputs to front when a signal isn't received to both left AND right side in the same time. (Negated AND gate)"
+}
