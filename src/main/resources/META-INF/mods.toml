@@ -44,7 +44,7 @@ description='''
 Add-on for Tiny Gates that adds more tiny redstone gates (NOR, NAND, XNOR).
 '''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
-[[dependencies.examplemod]] #optional
+[[dependencies.moretinygates]] #optional
     # the modid of the dependency
     modId="forge" #mandatory
     # Does this dependency have to exist - if not, ordering below must be specified
