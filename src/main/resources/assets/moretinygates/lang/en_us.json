@@ -1,11 +1,28 @@
-
 {
+  "moretinygates": "More Tiny Gates",
+
+  "block.moretinygates.nor_gate_block" : "XNOR Gate",
   "item.moretinygates.tiny_nor_gate" : "Tiny NOR Gate",
   "message.item.moretinygates.tiny_nor_gate": "Outputs to front when a signal isn't received from any side. (Negated OR gate)",
-  
+  "message.block.moretinygates.nor_gate_block": "Outputs to front when a signal isn't received from any side. (Negated OR gate)",
+
+  "block.moretinygates.xnor_gate_block" : "XNOR Gate",
   "item.moretinygates.tiny_xnor_gate" : "Tiny XNOR Gate",
   "message.item.moretinygates.tiny_xnor_gate": "Outputs to front when the input signals match. (Negated XOR gate)",
+  "message.block.moretinygates.xnor_gate_block": "Outputs to front when the input signals match. (Negated XOR gate)",
   
+  "block.moretinygates.nand_gate_block" : "NAND Gate",
   "item.moretinygates.tiny_nand_gate" : "Tiny NAND Gate",
-  "message.item.moretinygates.tiny_nand_gate": "Outputs to front when a signal isn't received to both left AND right side in the same time. (Negated AND gate)"
+  "message.item.moretinygates.tiny_nand_gate": "Outputs to front when a signal isn't received to both left AND right side in the same time. (Negated AND gate)",
+  "message.block.moretinygates.nand_gate_block": "Outputs to front when a signal isn't received to both left AND right side in the same time. (Negated AND gate)",
+
+  "block.moretinygates.diode_block" : "Diode",
+  "item.moretinygates.tiny_diode" : "Tiny Diode",
+  "message.item.moretinygates.tiny_diode": "Transmits signal one sided (works similar to a repeater but doesn't amplify signal)",
+  "message.block.moretinygates.diode_block": "Transmits signal one sided (works similar to a repeater but doesn't amplify signal)",
+
+  "block.moretinygates.limiter_block" : "Limiter",
+  "item.moretinygates.tiny_limiter" : "Tiny Limiter",
+  "message.item.moretinygates.tiny_limiter": "Limits the received redstone signal (back input) to the reference value (right input)",
+  "message.block.moretinygates.limiter_block": "Limits the received redstone signal (back input) to the reference value (right input)"
 }

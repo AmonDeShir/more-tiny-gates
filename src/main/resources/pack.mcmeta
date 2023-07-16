@@ -1,6 +1,6 @@
 {
     "pack": {
-        "description": "moretinygates resources",
-        "pack_format": 7
+        "description": "${mod_id} resources",
+        "pack_format": 15
     }
 }

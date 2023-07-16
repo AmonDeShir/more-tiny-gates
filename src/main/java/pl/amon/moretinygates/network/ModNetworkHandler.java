@@ -31,7 +31,7 @@ public class ModNetworkHandler {
       INSTANCE.messageBuilder(PanelCellSync.class,nextID())
         .encoder(PanelCellSync::toBytes)
         .decoder(PanelCellSync::new)
-        .consumer(PanelCellSync::handle)
+        .consumerNetworkThread(PanelCellSync::handle)
         .add();
     }
 
