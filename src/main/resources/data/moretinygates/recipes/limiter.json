@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+     "RRR", 
+     "G G",
+     "R R"
+  ],
+  "key": {
+      "G": {
+          "item": "moretinygates:tiny_diode"
+      },
+      "R": {
+        "item": "tinyredstone:tiny_redstone"
+    }
+  },
+  "result": {
+      "item": "moretinygates:tiny_limiter",
+      "count": 1
+  }
+}

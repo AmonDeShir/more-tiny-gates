@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+      "#G"
+  ],
+  "key": {
+      "#": {
+          "item": "minecraft:repeater"
+      },
+      "G": {
+          "item": "minecraft:redstone"
+      }
+  },
+  "result": {
+      "item": "moretinygates:diode_item",
+      "count": 1
+  }
+}
