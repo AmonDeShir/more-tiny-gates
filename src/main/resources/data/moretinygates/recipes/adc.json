@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "RRR",
+    "LAC",
+    "RRR"
+  ],
+  "key": {
+      "L": {
+          "item": "moretinygates:tiny_limiter"
+      },
+      "C": {
+          "item": "tinyredstone:tiny_clock"
+      },
+      "A": {
+        "item": "tinygates:tiny_and_gate"
+      },
+      "R": {
+        "item": "tinyredstone:tiny_redstone"
+      }
+  },
+  "result": {
+      "item": "moretinygates:tiny_adc",
+      "count": 2
+  }
+}
+
