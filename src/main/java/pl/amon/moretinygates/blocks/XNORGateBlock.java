@@ -12,6 +12,6 @@ public class XNORGateBlock extends GateBlock {
 
   @Override
   public int logic(int a, int b) {
-    return (a >= 0) == (b >= 0) ? 15 : 0;
+    return (a > 0) == (b > 0) ? 15 : 0;
   }
 }
