@@ -1,10 +1,12 @@
 package pl.amon.moretinygates.setup;
 
+import com.dannyandson.tinygates.items.GateBlockItem;
 import com.dannyandson.tinygates.items.PanelCellGateItem;
 import com.dannyandson.tinyredstone.TinyRedstone;
 import com.dannyandson.tinyredstone.network.PanelCellSync;
 
 import pl.amon.moretinygates.gates.Diode;
+import pl.amon.moretinygates.gates.Generator;
 import pl.amon.moretinygates.gates.Limiter;
 import pl.amon.moretinygates.gates.NANDGate;
 import pl.amon.moretinygates.gates.NORGate;
@@ -23,6 +25,8 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import pl.amon.moretinygates.MoreTinyGates;
 import pl.amon.moretinygates.blocks.DiodeBlock;
+import pl.amon.moretinygates.blocks.GeneratorBlock;
+import pl.amon.moretinygates.blocks.GeneratorBlockEntity;
 import pl.amon.moretinygates.blocks.LimiterBlock;
 import pl.amon.moretinygates.blocks.NANDGateBlock;
 import pl.amon.moretinygates.blocks.NORGateBlock;
@@ -40,11 +44,16 @@ public class Registration {
   public static final DiodeBlock DIODE_BLOCK = new DiodeBlock(ITEMS, BLOCKS, BLOCK_ENTITIES);
   public static final LimiterBlock LIMITER_BLOCK = new LimiterBlock(ITEMS, BLOCKS, BLOCK_ENTITIES);
 
+  public static final RegistryObject<Block> GENERATOR_BLOCK = BLOCKS.register("generator_block", GeneratorBlock::new);
+  public static final RegistryObject<Item> GENERATOR_ITEM = ITEMS.register("generator_item", () -> new GateBlockItem(GENERATOR_BLOCK.get()));
+  public static final RegistryObject<BlockEntityType<GeneratorBlockEntity>> GENERATOR_BLOCK_ENTITY = BLOCK_ENTITIES.register("generator_block", () -> BlockEntityType.Builder.of(GeneratorBlockEntity::new, GENERATOR_BLOCK.get()).build(null));
+  
   public static final RegistryObject<Item> TINY_NAND_GATE_ITEM = ITEMS.register("tiny_nand_gate", PanelCellGateItem::new);
   public static final RegistryObject<Item> TINY_NOR_GATE_ITEM = ITEMS.register("tiny_nor_gate", PanelCellGateItem::new);
   public static final RegistryObject<Item> TINY_XNOR_GATE_ITEM = ITEMS.register("tiny_xnor_gate", PanelCellGateItem::new);
   public static final RegistryObject<Item> TINY_DIODE_ITEM = ITEMS.register("tiny_diode", PanelCellGateItem::new);
   public static final RegistryObject<Item> TINY_LIMITER_ITEM = ITEMS.register("tiny_limiter", PanelCellGateItem::new);
+  public static final RegistryObject<Item> TINY_GENERATOR_ITEM = ITEMS.register("tiny_generator", PanelCellGateItem::new);
 
   public static RegistryObject<CreativeModeTab> CREATIVE_TAB = TAB.register("moretinygatestab", () ->
     CreativeModeTab.builder()
@@ -59,6 +68,7 @@ public class Registration {
     TinyRedstone.registerPanelCell(XNORGate.class, TINY_XNOR_GATE_ITEM.get());
     TinyRedstone.registerPanelCell(Diode.class, TINY_DIODE_ITEM.get());
     TinyRedstone.registerPanelCell(Limiter.class, TINY_LIMITER_ITEM.get());
+    TinyRedstone.registerPanelCell(Generator.class, TINY_GENERATOR_ITEM.get());
   }
 
   public static void registerTinyRedstoneNetworkHandlers(SimpleChannel INSTANCE, int id){

@@ -6,8 +6,6 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.loading.FMLEnvironment;
-import pl.amon.moretinygates.gates.multiblock.AbstractTinyMultiblock;
-import pl.amon.moretinygates.gates.multiblock.MultiblockRegistry;
 import pl.amon.moretinygates.network.ModNetworkHandler;
 import pl.amon.moretinygates.setup.ClientSetup;
 import pl.amon.moretinygates.setup.ModSetup;
@@ -38,9 +36,5 @@ public class MoreTinyGates
         // register everything
         Registration.registerPanelCells();
         ModNetworkHandler.registerMessages();
-    }
-
-    public static void registerMultiblock(String id, Class<? extends AbstractTinyMultiblock> multiblock, Item item) {
-        MultiblockRegistry.registerMultiblock(id, multiblock, item);
     }
 }

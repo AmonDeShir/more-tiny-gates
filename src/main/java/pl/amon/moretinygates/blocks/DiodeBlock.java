@@ -17,6 +17,6 @@ public class DiodeBlock extends GateBlock {
   
   @Override
   public int logic(int a, int b) {
-    return a;
+    return Math.max(0, a - 1);
   }
 }

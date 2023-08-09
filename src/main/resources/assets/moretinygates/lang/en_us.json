@@ -24,5 +24,10 @@
   "block.moretinygates.limiter_block" : "Limiter",
   "item.moretinygates.tiny_limiter" : "Tiny Limiter",
   "message.item.moretinygates.tiny_limiter": "Limits the received redstone signal (back input) to the reference value (right input)",
-  "message.block.moretinygates.limiter_block": "Limits the received redstone signal (back input) to the reference value (right input)"
+  "message.block.moretinygates.limiter_block": "Limits the received redstone signal (back input) to the reference value (right input)",
+
+  "block.moretinygates.generator_block" : "Generator",
+  "item.moretinygates.tiny_generator" : "Tiny Generator",
+  "message.item.moretinygates.tiny_generator": "Generates a redstone signal (power can be configured by left-clicking on the generator). It is turned off if powered (back input)",
+  "message.block.moretinygates.generator_block": "Generates a redstone signal (power can be configured by left-clicking on the generator). It is turned off if powered (back input)"
 }

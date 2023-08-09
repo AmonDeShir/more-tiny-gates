@@ -31,7 +31,7 @@ public class Diode extends AbstractAnalogElement {
   public boolean neighborChanged(PanelCellPos cellPos) {
     PanelCellNeighbor back = cellPos.getNeighbor(Side.BACK);
 
-    int output = back != null ? back.getWeakRsOutput() : 0;
+    int output = back != null ? Math.max(0, back.getWeakRsOutput() - 1) : 0;
 
     if (output != this.output) {
       this.output = output;

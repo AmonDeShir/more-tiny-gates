@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+     "BLB",
+     "BRB",
+     "BNB"
+  ],
+  "key": {
+      "B": {
+          "item": "tinyredstone:tiny_redstone_block"
+      },
+      "R": {
+        "item": "tinyredstone:tiny_redstone"
+      },
+      "L": {
+        "item": "moretinygates:tiny_limiter"
+      },
+      "N": {
+        "item": "tinygates:tiny_not_gate"
+      }
+
+  },
+  "result": {
+    "item": "moretinygates:tiny_generator",
+    "count": 3
+  }
+}

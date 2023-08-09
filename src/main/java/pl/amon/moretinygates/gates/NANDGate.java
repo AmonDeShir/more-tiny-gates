@@ -27,7 +27,7 @@ public class NANDGate extends AbstractGate {
   public boolean neighborChanged(PanelCellPos cellPos) {
     PanelCellNeighbor right = cellPos.getNeighbor(Side.RIGHT), left = cellPos.getNeighbor(Side.LEFT);
 
-    boolean output = (right == null || right.getWeakRsOutput() <= 0) && (left == null || left.getWeakRsOutput() <= 0);
+    boolean output = right == null || right.getWeakRsOutput() <= 0 || left == null || left.getWeakRsOutput() <= 0;
 
     if (output != this.output) {
       this.output = output;
