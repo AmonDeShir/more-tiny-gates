@@ -5,7 +5,7 @@
 ## New Gates
 **NAND Gate** - negated AND gate.\
 **NOR Gate** - negated OR gate.\
-**XNOR Gate** - Exclusive NOR gate.\
+**XNOR Gate** - Exclusive NOR gate.
 
 ## New Elements
 **Diode** - transmits signal one sided (works similar to a repeater but doesn't amplify signal).\
