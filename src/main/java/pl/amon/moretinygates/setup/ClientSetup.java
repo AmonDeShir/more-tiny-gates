@@ -30,5 +30,19 @@ public class ClientSetup {
 
     event.addSprite(XNORGate.TEXTURE_XNOR_GATE_ON);
     event.addSprite(XNORGate.TEXTURE_XNOR_GATE_OFF);
+
+    event.addSprite(Diode.TEXTURE_ON);
+    event.addSprite(Diode.TEXTURE_OFF);
+
+    event.addSprite(Limiter.TEXTURE_ON);
+    event.addSprite(Limiter.TEXTURE_OFF);
+
+    for (var sprite : Generator.TEXTURE_ON) {
+      event.addSprite(sprite);
+    }
+
+    for (var sprite : Generator.TEXTURE_OFF) {
+      event.addSprite(sprite);
+    }
   }
 }

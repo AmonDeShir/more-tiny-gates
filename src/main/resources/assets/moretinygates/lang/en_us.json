@@ -7,5 +7,14 @@
   "message.item.moretinygates.tiny_xnor_gate": "Outputs to front when the input signals match. (Negated XOR gate)",
   
   "item.moretinygates.tiny_nand_gate" : "Tiny NAND Gate",
-  "message.item.moretinygates.tiny_nand_gate": "Outputs to front when a signal isn't received to both left AND right side in the same time. (Negated AND gate)"
+  "message.item.moretinygates.tiny_nand_gate": "Outputs to front when a signal isn't received to both left AND right side in the same time. (Negated AND gate)",
+  
+  "item.moretinygates.tiny_diode" : "Tiny Diode",
+  "message.item.moretinygates.tiny_diode": "Transmits signal one sided (works similar to a repeater but doesn't amplify signal)",
+  
+  "item.moretinygates.tiny_limiter" : "Tiny Limiter",
+  "message.item.moretinygates.tiny_limiter": "Limits the received redstone signal (back input) to the reference value (right input)",
+  
+  "block.moretinygates.generator_block" : "Generator",
+  "item.moretinygates.tiny_generator" : "Tiny Generator"
 }
