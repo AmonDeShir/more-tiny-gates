@@ -4,13 +4,13 @@
 [**More Tiny Gates**](https://www.curseforge.com/minecraft/mc-mods/more-tiny-gates) is an add-on for Tiny Gates Add-on that adds a few more logical gates.
 
 ## New Gates
-**NAND Gage** - negated AND gate
+**NAND Gate** - negated AND gate
 ![NAND Gate](https://github.com/AmonDeShir/more-tiny-gates/blob/1.20/screenshots/nand.png?raw=true "NAND Gate")
 
-**NOR Gage** - negated OR gate
+**NOR Gate** - negated OR gate
 ![NOR Gate](https://github.com/AmonDeShir/more-tiny-gates/blob/1.20/screenshots/nor.png?raw=true "NOR Gate")
 
-**XNOR Gage** - Exclusive NOR gate
+**XNOR Gate** - Exclusive NOR gate
 ![XNOR Gate](https://github.com/AmonDeShir/more-tiny-gates/blob/1.20/screenshots/xnor.png?raw=true "XNOR Gate")
 
 
