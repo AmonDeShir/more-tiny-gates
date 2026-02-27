@@ -1,6 +1,7 @@
 package pl.amon.moretinygates.blocks;
 
 import java.util.function.Supplier;
+import java.util.function.Function;
 import javax.annotation.Nullable;
 
 import com.dannyandson.tinygates.blocks.AbstractGateBlock;
@@ -34,7 +35,13 @@ public abstract class GateBlock {
     item = ITEMS.register(name + "_item", () -> new GateBlockItem(block.get()));
     entity = BLOCK_ENTITIES.register(name + "_block", this.createSupplier(name, block));
   }
-  
+
+  public GateBlock(String name, DeferredRegister<Item> ITEMS, DeferredRegister<Block> BLOCKS, DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES, Function<Side, Boolean> canConnectRedstoneFn) {
+    block = BLOCKS.register(name + "_block", () -> new VariantBlock(name,canConnectRedstoneFn));
+    item = ITEMS.register(name + "_item", () -> new GateBlockItem(block.get()));
+    entity = BLOCK_ENTITIES.register(name + "_block", this.createSupplier(name, block));
+  }
+
   public int runLogicOnSites(int left, int right, int back, int front) {
     return logic(left, right);
   }
@@ -57,10 +64,18 @@ public abstract class GateBlock {
 
   public class VariantBlock extends AbstractGateBlock {
     String name;
+    Function<Side, Boolean> canConnectRedstoneFn;
 
     public VariantBlock(String name) {
       super();
       this.name = name;
+      this.canConnectRedstoneFn = (Side side) -> side == Side.LEFT || side == Side.RIGHT || side == Side.FRONT;
+    }
+
+    public VariantBlock(String name,Function<Side, Boolean> canConnectRedstoneFn) {
+      super();
+      this.name = name;
+      this.canConnectRedstoneFn = canConnectRedstoneFn;
     }
 
     @Override
@@ -70,7 +85,7 @@ public abstract class GateBlock {
 
     @Override
     public boolean canConnectRedstone(Side side) {
-      return side == Side.LEFT || side == Side.RIGHT || side == Side.FRONT;
+      return canConnectRedstoneFn.apply(side);
     }
   }
 

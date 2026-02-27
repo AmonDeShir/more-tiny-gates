@@ -1,5 +1,7 @@
 package pl.amon.moretinygates.blocks;
 
+import com.dannyandson.tinygates.blocks.Side;
+
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -7,7 +9,7 @@ import net.minecraftforge.registries.DeferredRegister;
 
 public class DiodeBlock extends GateBlock {
   public DiodeBlock(DeferredRegister<Item> ITEMS, DeferredRegister<Block> BLOCKS, DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES) {
-    super("diode", ITEMS, BLOCKS, BLOCK_ENTITIES);
+    super("diode", ITEMS, BLOCKS, BLOCK_ENTITIES, (Side side) -> side == Side.BACK || side == Side.FRONT);
   }
 
   @Override
