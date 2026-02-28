@@ -17,18 +17,17 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.client.event.EntityRenderersEvent;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
+import net.neoforged.neoforge.registries.DeferredRegister;
 import pl.amon.moretinygates.MoreTinyGates;
 
 
 public abstract class GateBlock {
   public abstract int logic(int a, int b);
   
-  public RegistryObject<VariantBlock> block;
-  public RegistryObject<Item> item;
-  public RegistryObject<BlockEntityType<VariantBlockEntity>> entity;
+  public Supplier<VariantBlock> block;
+  public Supplier<Item> item;
+  public Supplier<BlockEntityType<VariantBlockEntity>> entity;
 
   public GateBlock(String name, DeferredRegister<Item> ITEMS, DeferredRegister<Block> BLOCKS, DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES) {
     block = BLOCKS.register(name + "_block", () -> new VariantBlock(name));
@@ -50,16 +49,16 @@ public abstract class GateBlock {
     event.registerBlockEntityRenderer(entity.get(), GateBlockRenderer::new);
   }
 
-  public Supplier<? extends BlockEntityType<VariantBlockEntity>> createSupplier(String name, RegistryObject<VariantBlock> block) {
+  public Supplier<? extends BlockEntityType<VariantBlockEntity>> createSupplier(String name, Supplier<VariantBlock> block) {
     return () -> BlockEntityType.Builder.of((BlockPos pos, BlockState state) -> new VariantBlockEntity(pos, state, name), block.get()).build(null);
   }
 
   public static ResourceLocation getOnTexture(String name) {
-    return new ResourceLocation(MoreTinyGates.MODID, "block/" + name + "_on");
+    return ResourceLocation.fromNamespaceAndPath(MoreTinyGates.MODID, "block/" + name + "_on");
   } 
 
   public static ResourceLocation getOffTexture(String name) {
-    return new ResourceLocation(MoreTinyGates.MODID, "block/" + name + "_off");
+    return ResourceLocation.fromNamespaceAndPath(MoreTinyGates.MODID, "block/" + name + "_off");
   }
 
   public class VariantBlock extends AbstractGateBlock {

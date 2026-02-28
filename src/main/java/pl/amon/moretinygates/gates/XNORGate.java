@@ -11,8 +11,8 @@ import net.minecraft.resources.ResourceLocation;
 import pl.amon.moretinygates.MoreTinyGates;
 
 public class XNORGate extends AbstractGate {
-  public static ResourceLocation TEXTURE_XNOR_GATE_ON = new ResourceLocation(MoreTinyGates.MODID, "block/xnor_gate_on");
-  public static ResourceLocation TEXTURE_XNOR_GATE_OFF = new ResourceLocation(MoreTinyGates.MODID, "block/xnor_gate_off");
+  public static ResourceLocation TEXTURE_XNOR_GATE_ON = ResourceLocation.fromNamespaceAndPath(MoreTinyGates.MODID, "block/xnor_gate_on");
+  public static ResourceLocation TEXTURE_XNOR_GATE_OFF = ResourceLocation.fromNamespaceAndPath(MoreTinyGates.MODID, "block/xnor_gate_off");
 
   @Override
   public void render(PoseStack poseStack, MultiBufferSource buffer, int combinedLight, int combinedOverlay, float alpha) {

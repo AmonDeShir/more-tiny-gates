@@ -7,7 +7,9 @@ import com.dannyandson.tinygates.blocks.Side;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -28,19 +30,33 @@ public class GeneratorBlock extends AbstractGateBlock {
     return side == Side.BACK || side == Side.FRONT;
   }
 
-  /** @deprecated */
-  @Deprecated
-  public InteractionResult use(BlockState blockState, Level level, BlockPos blockPos, Player player, InteractionHand interactionHand, BlockHitResult blockHitResult) {
+  @Override
+  protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
     if (level.isClientSide) {
       return InteractionResult.SUCCESS;
     }
-    
-    BlockEntity entity = level.getBlockEntity(blockPos);
-    
+
+    BlockEntity entity = level.getBlockEntity(pos);
+
     if (entity instanceof GeneratorBlockEntity generatorEntity) {
       generatorEntity.onActivated();
     }
 
     return InteractionResult.CONSUME;
+  }
+
+  @Override
+  protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
+    if (level.isClientSide) {
+      return ItemInteractionResult.SUCCESS;
+    }
+
+    BlockEntity entity = level.getBlockEntity(pos);
+
+    if (entity instanceof GeneratorBlockEntity generatorEntity) {
+      generatorEntity.onActivated();
+    }
+
+    return ItemInteractionResult.CONSUME;
   }
 }

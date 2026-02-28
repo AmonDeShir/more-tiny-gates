@@ -15,8 +15,8 @@ import net.minecraft.resources.ResourceLocation;
 import pl.amon.moretinygates.MoreTinyGates;
 
 public class Diode extends AbstractAnalogElement {
-  public static ResourceLocation TEXTURE_ON = new ResourceLocation(MoreTinyGates.MODID, "block/diode_on");
-  public static ResourceLocation TEXTURE_OFF = new ResourceLocation(MoreTinyGates.MODID, "block/diode_off");
+  public static ResourceLocation TEXTURE_ON = ResourceLocation.fromNamespaceAndPath(MoreTinyGates.MODID, "block/diode_on");
+  public static ResourceLocation TEXTURE_OFF = ResourceLocation.fromNamespaceAndPath(MoreTinyGates.MODID, "block/diode_off");
 
   @Override
   public void render(PoseStack poseStack, MultiBufferSource buffer, int combinedLight, int combinedOverlay, float alpha) {

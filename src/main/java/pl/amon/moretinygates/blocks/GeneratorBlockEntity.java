@@ -6,6 +6,7 @@ import com.dannyandson.tinygates.blocks.AbstractGateBlockEntity;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.state.BlockState;
@@ -53,19 +54,19 @@ public class GeneratorBlockEntity extends AbstractGateBlockEntity {
   }
 
   @Override
-  protected void saveAdditional(CompoundTag nbt) {
-    super.saveAdditional(nbt);
-    
-    nbt.putBoolean("powerOn", this.powerOn);
-    nbt.putInt("level", this.level);
-  }
-  
-  @Override
-  public void load(CompoundTag compoundTag) {
-    super.load(compoundTag);
+  protected void saveAdditional(CompoundTag tag, HolderLookup.Provider provider) {
+    super.saveAdditional(tag, provider);
 
-    this.powerOn = compoundTag.getBoolean("powerOn");
-    this.level = compoundTag.getInt("level");
+    tag.putBoolean("powerOn", powerOn);
+    tag.putInt("level", level);
+  }
+
+  @Override
+  protected void loadAdditional(CompoundTag tag, HolderLookup.Provider provider) {
+    super.loadAdditional(tag, provider);
+
+    powerOn = tag.getBoolean("powerOn");
+    level = tag.getInt("level");
   }
 
   public void onActivated() {

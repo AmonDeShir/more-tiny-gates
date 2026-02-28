@@ -1,0 +1,83 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "pl.amon.moretinygates",
+    "module": "more-tiny-gates",
+    "version": "1.21.1-1.0.6",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 21,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "more-tiny-gates-1.21.1-1.0.6.jar",
+          "url": "more-tiny-gates-1.21.1-1.0.6.jar",
+          "size": 167309,
+          "sha512": "082d4a2ca9952888f3c6785c32aaaba536bf50e1268c9c984daa2257d90ffad6d4a899c9975b9e9b8e4ec3561b2f9bf3a9df44d1b74c4c6a7dab7436137815b3",
+          "sha256": "14b1c92f55effa2f34eae3770334e7b1c375a633d43e8f947cc4c5a020e38772",
+          "sha1": "50af6208169f4631da8ab25464de93071d8c986b",
+          "md5": "3ea49d05d3ee80459871f6d8cd3718d9"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 21,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "curse.maven",
+          "module": "tinyredstone-453746",
+          "version": {
+            "requires": "7680159"
+          }
+        },
+        {
+          "group": "curse.maven",
+          "module": "tinygates-522875",
+          "version": {
+            "requires": "7664787"
+          }
+        },
+        {
+          "group": "org.javassist",
+          "module": "javassist",
+          "version": {
+            "requires": "3.29.2-GA"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "more-tiny-gates-1.21.1-1.0.6.jar",
+          "url": "more-tiny-gates-1.21.1-1.0.6.jar",
+          "size": 167309,
+          "sha512": "082d4a2ca9952888f3c6785c32aaaba536bf50e1268c9c984daa2257d90ffad6d4a899c9975b9e9b8e4ec3561b2f9bf3a9df44d1b74c4c6a7dab7436137815b3",
+          "sha256": "14b1c92f55effa2f34eae3770334e7b1c375a633d43e8f947cc4c5a020e38772",
+          "sha1": "50af6208169f4631da8ab25464de93071d8c986b",
+          "md5": "3ea49d05d3ee80459871f6d8cd3718d9"
+        }
+      ]
+    }
+  ]
+}

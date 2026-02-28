@@ -11,8 +11,8 @@ import net.minecraft.resources.ResourceLocation;
 import pl.amon.moretinygates.MoreTinyGates;
 
 public class NORGate extends AbstractGate {
-  public static ResourceLocation TEXTURE_NOR_GATE_ON = new ResourceLocation(MoreTinyGates.MODID, "block/nor_gate_on");
-  public static ResourceLocation TEXTURE_NOR_GATE_OFF = new ResourceLocation(MoreTinyGates.MODID, "block/nor_gate_off");
+  public static ResourceLocation TEXTURE_NOR_GATE_ON = ResourceLocation.fromNamespaceAndPath(MoreTinyGates.MODID, "block/nor_gate_on");
+  public static ResourceLocation TEXTURE_NOR_GATE_OFF = ResourceLocation.fromNamespaceAndPath(MoreTinyGates.MODID, "block/nor_gate_off");
 
   @Override
   public void render(PoseStack poseStack, MultiBufferSource buffer, int combinedLight, int combinedOverlay, float alpha) {
